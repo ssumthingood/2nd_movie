@@ -1,6 +1,6 @@
 # HongFlix
 
-Studying
+2nd_react_study
 
 ## Screens
 
