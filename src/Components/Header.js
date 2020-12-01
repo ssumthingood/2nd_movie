@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {Link, withRouter} from 'react-router-dom'//withRouter는 다른 컴포넌트는 감싸는 컴포넌트
+import {Link, withRouter} from 'react-router-dom'//withRouter는 다른 컴포넌트를 감싸는 컴포넌트
                                                 //  - css가 props에 접근할 수 있도록 해준다.
 // import styles from "./Header.module.css"
 
@@ -42,10 +42,10 @@ justify-content:center;
 //module.css로 설정할거면 <ul className = {styles.navList}> 로 할것
 export default withRouter(({location:{pathname}}) => (
     <Header>
-        {console.log(pathname)};
+        {console.log(pathname)}
         <List>  
             <Item current={pathname === "/"}>
-                <SLink to="/">Home</SLink>
+                <SLink to="/">Movies</SLink>
             </Item>
             <Item current={pathname === "/tv"}>
                 <SLink to="/tv">TV</SLink>
@@ -56,5 +56,6 @@ export default withRouter(({location:{pathname}}) => (
         </List>
     </Header>
 ));
+//링크 클릭 시 주소와 pathname 대조 후 current값을 설정 - css에서 current값에 따라 border-bottom 변환
 
 //위의 방법 대신 const Header = () => () 로 선언하고 export default withRouter(Header) 로 표현할 수도 있다.

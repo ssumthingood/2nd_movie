@@ -4,7 +4,9 @@ import Home from "Routes/Home";
 import Search from "Routes/Search";
 import TV from "Routes/TV";
 import Header from "Components/Header";
-//Switch는 한번에 하나의 Route만 render할수 있게 한다.
+import Detail from "Routes/Detail";
+
+//Switch는 한번에 하나의 Route만 render할수 있게 한다.(그냥 Route들을 묶어준다는 소리 아닐까)
 export default () => (
     <Router>
         <>
@@ -14,6 +16,8 @@ export default () => (
             <Route path="/tv" exact component={TV} />
             <Route path="/tv/popular" render={()=> <h1>Popular</h1>}/>
             <Route path="/search" component={Search} />
+            <Route path="/movie/:id" component={Detail}/>
+            <Route path="/tv/:id" component={Detail}/>
             <Redirect from="*" to="/" />
         </Switch>
         </>
