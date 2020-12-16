@@ -8,7 +8,6 @@ const api = axios.create({
     }
 })
 
-
 export const TVApi = {
     airingToday:() => api.get("tv/airing_today"),
     topRated:() =>api.get("tv/top_rated"),
@@ -18,6 +17,7 @@ export const TVApi = {
           params:{
                append_to_response:"videos"
           }
+          
         }),
     search:(term) =>api.get("search/tv", {
         params:{

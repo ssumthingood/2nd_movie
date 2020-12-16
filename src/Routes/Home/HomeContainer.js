@@ -14,13 +14,8 @@ export default class extends React.Component{
     async componentDidMount(){
         try{
             const {data:{results:nowPlaying}} = await moviesApi.nowPlaying();
-            console.log(nowPlaying);
-
             const {data:{results:upComing}} = await moviesApi.upComing();
-            console.log(upComing);
-
             const {data:{results:popular}} = await moviesApi.popular();
-            console.log(popular);
 
             this.setState({
                 nowPlaying,//자바스크립트는 nowPlaying 을 nowPlaying(클래스의 state):(try 내 변수)nowPlying으로 인식
@@ -39,13 +34,13 @@ export default class extends React.Component{
     }
 
     render(){
-        const {nowPlaying, upComing, popular, error, loading} = this.state;//구조분해할당
+        const {nowPlaying, upComing, popular, err, loading} = this.state;//구조분해할당
         console.log(this.state);
         return (<HomePresenter 
         nowPlaying = {nowPlaying} 
         upComing={upComing} 
         popular={popular}
-        error = {error}
+        err = {err}
         loading={loading}
         />)
     }
